@@ -1,4 +1,4 @@
-c_programming
-=============
+Compilers Construction
+======================
 
-Preparatory C work for the F2014@UNM
+Work for the Compiler Construction course at UNM during Fall 2014 (CS 554)
