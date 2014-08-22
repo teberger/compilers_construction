@@ -25,5 +25,5 @@
 #emacs temp files
 *.*~
 
-#Haskell files
+#Haskell object files
 *.hi
