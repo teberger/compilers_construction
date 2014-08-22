@@ -19,6 +19,8 @@ data OptCode = Conditional_Move |
                Input | 
                Load |
                Load_Immediate deriving (Enum, Eq, Show)
+                                                                              
+type Machine = Array Int32 (Array Int32)
 
 
 main :: IO ()
