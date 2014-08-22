@@ -25,6 +25,6 @@ main :: IO ()
 main = return ()
 
 opCode :: Int32 -> OptCode
-opCode = undefined
+opCode a = a .&. (0x0007)
 
 
