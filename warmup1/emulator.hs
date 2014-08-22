@@ -22,3 +22,5 @@ main = return ()
 
 opCode :: Int32 -> OptCode
 opCode = undefined
+
+type Register = Int
