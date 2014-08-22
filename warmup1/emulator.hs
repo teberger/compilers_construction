@@ -2,7 +2,7 @@ import Control.IO
 import Data.Bits
 import Data.Int
 
-data OptCode = Opt1 "" |
+data OptCode = Conditional_Move |
                Array_Index |
                Array_Update | 
                Addition | 
