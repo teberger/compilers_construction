@@ -20,6 +20,7 @@ data OptCode = Conditional_Move |
                Load |
                Load_Immediate
 
+
 main :: IO ()
 main = return ()
 
