@@ -3,6 +3,8 @@ import Data.Bits
 import Data.Int
 import Data.Array.Boxed
 
+type Register = Int32
+
 data OptCode = Conditional_Move |
                Array_Index |
                Array_Update | 
@@ -24,4 +26,4 @@ main = return ()
 opCode :: Int32 -> OptCode
 opCode = undefined
 
-type Register = Int32
+
