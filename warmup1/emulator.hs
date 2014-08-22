@@ -27,4 +27,4 @@ main :: IO ()
 main = return ()
 
 opCode :: Int32 -> OptCode
-opCode a =  toEnum $ a .&. (0x0007) 
+opCode a =  toEnum (a .&. (0x0007))
