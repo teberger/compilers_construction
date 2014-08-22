@@ -18,13 +18,27 @@ data OptCode = Conditional_Move |
                Output |
                Input | 
                Load |
-               Load_Immediate
+               Load_Immediate deriving Enum
 
 
 main :: IO ()
 main = return ()
 
 opCode :: Int32 -> OptCode
-opCode a = a .&. (0x0007)
+opCode a = case a .&. (0x0007) 
+           of 1 -> ConditionalMove
+              2 -> Array_Index 
+              3 ->  Array_Update 
+              4 -> Addition  
+              5 -> Multiplication 
+              6 -> Division 
+              7 -> Nand 
+              8 -> Halt 
+               Allocation 
+               Deallocation  
+               Output 
+               Input  
+               Load 
+               Load_Immediate
 
 
