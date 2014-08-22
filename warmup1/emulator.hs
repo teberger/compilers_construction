@@ -26,5 +26,5 @@ type Machine = Array Int32 (Array Int32 Int32)
 main :: IO ()
 main = return ()
 
-opCode :: Int -> OptCode
-opCode a =  toEnum (a .&. (0x0007))
+opCode :: Int32 -> OptCode
+opCode a =  toEnum . fromIntegral (a .&. (0x0007))
