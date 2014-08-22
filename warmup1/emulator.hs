@@ -1,7 +1,7 @@
 import Control.IO
 import Data.Bits
 import Data.Int
-import Data.Array.Boxed
+--import Data.Array.Boxed
 
 type Register = Int32
 
