@@ -28,6 +28,3 @@ main = return ()
 
 opCode :: Int32 -> OptCode
 opCode a =  fromEnum $ a .&. (0x0007) 
-           
-
-
