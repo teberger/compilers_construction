@@ -1,4 +1,3 @@
-
 import Data.Bits
 import Data.Int
 import Data.Array
