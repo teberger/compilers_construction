@@ -20,7 +20,7 @@ data OptCode = Conditional_Move |
                Load_Immediate deriving (Enum, Eq, Show)
                                                                               
 type Machine = Array Int32 (Array Int32 Int32)
-
+type Register = [Int32]
 
 main :: IO ()
 main = return ()
