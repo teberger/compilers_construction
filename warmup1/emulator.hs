@@ -28,3 +28,4 @@ main = return ()
 
 opCode :: Int32 -> OptCode
 opCode a =  toEnum . fromIntegral $ (a .&. (0x0007))
+λ> 
