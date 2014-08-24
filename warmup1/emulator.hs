@@ -35,5 +35,5 @@ condMove :: Int32 -> State MachineState MachineState
 condMove = do
   s <- get
   
-  return
+  return s
 --}
