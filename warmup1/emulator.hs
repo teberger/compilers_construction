@@ -40,7 +40,11 @@ reg :: Int32 -> Int32 -> Int
 reg mask = fromIntegral . (.&. mask)
 
 addition :: Instruction -> State MachineState MachineState
-addition inst = undefined
+addition inst = do
+  (regs, mem) <- get
+  let answer = (regs ! regB inst) + (regs ! regA inst)
+      idxA = regA inst
+  return (regs // [(idxA, answer)], mem)
 
 arrayUpdate :: Instruction -> State MachineState MachineState
 arrayUpdate inst = do
