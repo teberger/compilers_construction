@@ -39,17 +39,22 @@ regC = reg 0x07
 reg :: Int32 -> Int32 -> Int
 reg mask = fromIntegral . (.&. mask)
 
+nand :: Instruction -> State MachineState MachineState
+nand inst = do
+  (regs, mem) <- get
+  let a = compliment $ (regs ! regB inst) .|. (regs ! regC inst)
+
 division :: Instruction -> State MachineState MachineState
 division inst = do
   (regs, mem) <- get
-  let answer = (regs ! regB inst) `div` (regs ! regA inst) 
+  let answer = (regs ! regB inst) `div` (regs ! regC inst) 
       idxA = regA inst 
   return (regs // [(idxA, answer)], mem)
 
 multiplication :: Instruction -> State MachineState MachineState
 multiplication inst = do
   (regs, mem) <- get
-  let answer = (regs ! regB inst) * (regs ! regA inst) 
+  let answer = (regs ! regB inst) * (regs ! regC inst) 
       idxA = regA inst 
   return (regs // [(idxA, answer)], mem)
     
@@ -57,7 +62,7 @@ multiplication inst = do
 addition :: Instruction -> State MachineState MachineState
 addition inst = do
   (regs, mem) <- get
-  let answer = (regs ! regB inst) + (regs ! regA inst)
+  let answer = (regs ! regB inst) + (regs ! regC inst)
       idxA = regA inst
   return (regs // [(idxA, answer)], mem)
 
