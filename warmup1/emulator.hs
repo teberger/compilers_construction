@@ -37,10 +37,10 @@ condMove inst = do
   let idxA = fromIntegral $ inst .&. 0xE0 
       idxB = fromIntegral $ inst .&. 0x1B 
       regC = regs ! (fromIntegral $ inst .&. 0x07)
-
   if regC /= 0
     then return (newRegs regs idxA idxB, mem)
     else return (regs, mem)
+         
   where newRegs regs ia ib = regs // [(ia, regs ! ib),
                                       (ib, regs ! ia)]
 --}
