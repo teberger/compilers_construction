@@ -36,6 +36,8 @@ arrayUpdate inst = do
   (regs, mem) <- get
   let arrId = regs ! regA inst
       offset = regs ! regB inst
+      val = regs ! regC inst
+      
   return (regs, mem)
 
 
