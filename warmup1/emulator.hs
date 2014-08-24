@@ -38,7 +38,7 @@ arrayUpdate = do
   return (regs, mem)
 
 
-regA, regB, regC :: Int32 -> Int
+regC :: Int32 -> Int
 regA = reg 0xE0
 regB = reg 0x1B
 regC = reg 0x07
