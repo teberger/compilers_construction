@@ -38,7 +38,6 @@ arrayUpdate inst = do
       offset = regs ! regB inst
       val = regs ! regC inst
       newMem = mem // [(arrId, (mem ! arrId) // [(offset, val)])]
-                      
   return (regs, mem)
 
 
