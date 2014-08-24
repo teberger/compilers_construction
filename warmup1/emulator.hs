@@ -1,7 +1,7 @@
 import Data.Bits
 import Data.Int
 import Data.Array
-import Control.Monad.StateT
+import Control.Monad.State
 
 
 data OptCode = Conditional_Move |
