@@ -34,8 +34,8 @@ opCode instruction =  toEnum . fromIntegral $ (instruction .&. (0x0007))
 condMove :: Int32 -> State MachineState MachineState
 condMove inst = do
   (regs, mem) <- get
-  let idxA = inst .&. 0xE0
-      idxB = inst .&. 0x1B
+  let idxA = fromIntegral $ inst .&. 0xE0
+      idxB = fromIntegral $ inst .&. 0x1B
       idxC = fromIntegral $ inst .&. 0x7
       newRegisters = [ r | r <- regs, (regs !! idxC) /= 0]
   
