@@ -42,7 +42,7 @@ reg mask = fromIntegral . (.&. mask)
 nand :: Instruction -> State MachineState MachineState
 nand inst = do
   (regs, mem) <- get
-  let a = compliment $ (regs ! regB inst) .|. (regs ! regC inst)
+  let a = complement $ (regs ! regB inst) .|. (regs ! regC inst)
       idxA = regA inst
   return (regs // [(idxA, a)], mem)
 
