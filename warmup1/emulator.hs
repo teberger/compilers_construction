@@ -37,7 +37,7 @@ arrayUpdate inst = do
   let arrId = regs ! regA inst
       offset = regs ! regB inst
       val = regs ! regC inst
-      newMem = mem // ([] (arrId, (mem ! arrId) // [(offset, val)]))
+      newMem = mem // [(arrId, (mem ! arrId) // [(offset, val)])]
                       
   return (regs, mem)
 
