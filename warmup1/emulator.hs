@@ -36,7 +36,7 @@ condMove inst = do
   (regs, mem) <- get
   let idxA = fromIntegral $ inst .&. 0xE0
       idxB = fromIntegral $ inst .&. 0x1B
-      regC = regs ! (fromIntegral $ inst .&. 0x07)
+      regC = regs ! (fromIntegral $ inst .&. 0x07) :: Int32
 --  if regC /= 0
 --    then let regA = regs !! idxA
 --             regB = regs !! idxB
