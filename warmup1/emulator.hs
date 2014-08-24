@@ -34,7 +34,7 @@ opCode instruction =  toEnum . fromIntegral $ (instruction .&. (0xE800))
 arrayUpdate :: Instruction -> State MachineState MachineState
 arrayUpdate inst = do
   (regs, mem) <- get
-  let arrId = regs ! regA
+--  let arrId = regs ! regA
   return (regs, mem)
 
 
