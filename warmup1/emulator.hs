@@ -31,6 +31,6 @@ opCode :: Int32 -> OptCode
 opCode instruction =  toEnum . fromIntegral $ (instruction .&. (0x0007))
 
 --{-
---condMove :: StateT
+condMove :: State MachineState MachineState
 condMove = undefined
 --}
