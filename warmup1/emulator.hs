@@ -20,6 +20,7 @@ data OptCode = Conditional_Move |
                Load_Immediate deriving (Enum, Eq, Show)
                                                                               
 type Memory = Array Int32 (Array Int32 Int32)
+type Instruction = Int32
 type Register = Int32
 type Registers = Array Int Int32
 type MachineState = (Registers, Memory)
@@ -27,11 +28,15 @@ type MachineState = (Registers, Memory)
 main :: IO ()
 main = return ()
 
-opCode :: Int32 -> OptCode
+opCode :: Instruction -> OptCode
 opCode instruction =  toEnum . fromIntegral $ (instruction .&. (0x0007))
 
+arrayIndex :: Instruction -> State MachineState MachineState
+arrayIndex inst = do
+  let
+
 {- -}
-condMove :: Int32 -> State MachineState MachineState
+condMove :: Instruction -> State MachineState MachineState
 condMove inst = do
   (regs, mem) <- get
   let idxA = fromIntegral $ inst .&. 0xE0 
@@ -40,7 +45,7 @@ condMove inst = do
   if regC /= 0
     then return (newRegs regs idxA idxB, mem)
     else return (regs, mem)
-         
+  
   where newRegs regs ia ib = regs // [(ia, regs ! ib),
                                       (ib, regs ! ia)]
 --}
