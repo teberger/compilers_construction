@@ -30,7 +30,7 @@ main = return ()
 opCode :: Int32 -> OptCode
 opCode instruction =  toEnum . fromIntegral $ (instruction .&. (0x0007))
 
---{-
+{- -}
 condMove :: Int32 -> State MachineState MachineState
 condMove inst = do
   (regs, mem) <- get
