@@ -22,7 +22,7 @@ data OptCode = Conditional_Move |
 type Memory = Array Int32 (Array Int32 Int32)
 type Register = Int32
 type Registers = [Int32]
-type MachineState = (Register, Memory)
+type MachineState = (Registers, Memory)
 
 main :: IO ()
 main = return ()
@@ -31,6 +31,9 @@ opCode :: Int32 -> OptCode
 opCode instruction =  toEnum . fromIntegral $ (instruction .&. (0x0007))
 
 --{-
-condMove :: State MachineState MachineState
-condMove = undefined
+condMove :: Int32 -> State MachineState MachineState
+condMove = do
+  s <- get
+  
+  return
 --}
