@@ -36,7 +36,7 @@ condMove inst = do
   (regs, mem) <- get
   let idxA = inst .&. 0xE0
       idxB = inst .&. 0x1B
-      idxC = inst .&. 0x7
+      idxC = fromIntegral $ inst .&. 0x7
       newRegisters = [ r | r <- regs, (regs !! idxC) /= 0]
   
   
