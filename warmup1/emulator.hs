@@ -1,7 +1,7 @@
 import Data.Bits
 import Data.Int
 import Data.Array
-import Control.Monad
+import Control.Monad.State
 
 
 data OptCode = Conditional_Move |
@@ -30,5 +30,5 @@ main = return ()
 opCode :: Int32 -> OptCode
 opCode instruction =  toEnum . fromIntegral $ (instruction .&. (0x0007))
 
---condMove :: StateT
---condMove = 
+condMove :: StateT
+condMove = 
