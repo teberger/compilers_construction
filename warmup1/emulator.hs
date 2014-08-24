@@ -39,6 +39,9 @@ regC = reg 0x07
 reg :: Int32 -> Int32 -> Int
 reg mask = fromIntegral . (.&. mask)
 
+addition :: Instruction -> State MachineState MachineState
+addition inst = undefined
+
 arrayUpdate :: Instruction -> State MachineState MachineState
 arrayUpdate inst = do
   (regs, mem) <- get
