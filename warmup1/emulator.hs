@@ -40,8 +40,6 @@ arrayUpdate inst = do
       newMem = mem // [(arrId, (mem ! arrId) // [(offset, val)])]
   return (regs, mem)
 
-
-
 regC :: Int32 -> Int
 regA = reg 0xE0
 regB = reg 0x1B
