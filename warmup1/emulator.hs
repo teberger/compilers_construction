@@ -41,6 +41,6 @@ condMove inst = do
     then return (newRegs regs idxA idxB, mem)
     else return (regs, mem)
          
-  where newRegs regs ia ib = regs // [(idxA, regs ! ib),
+  where newRegs regs ia ib = regs // [(ia, regs ! ib),
                                       (ib, regs ! ia)]
 --}
