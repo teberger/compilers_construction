@@ -39,6 +39,14 @@ regC = reg 0x07
 reg :: Int32 -> Int32 -> Int
 reg mask = fromIntegral . (.&. mask)
 
+multiplication :: Instruction -> State MachineState MachineState
+multiplication inst = do
+  (regs, mem) <- get
+  let answer = (regs ! regB inst) * (regs ! regA inst) :: Int
+      idxA = regA inst
+  return (regs // [(idxA, answer)], mem)
+    
+
 addition :: Instruction -> State MachineState MachineState
 addition inst = do
   (regs, mem) <- get
