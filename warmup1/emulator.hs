@@ -35,8 +35,8 @@ condMove :: Int32 -> State MachineState MachineState
 condMove inst = do
   (regs, mem) <- get
   let regA = regs !! (fromIntegral $ inst .&. 0xE0)
-      regB = regs !! fromIntegral $ inst .&. 0x1B
-      regC = regs !! fromIntegral $ inst .&. 0x7
+      regB = regs !! (fromIntegral $ inst .&. 0x1B)
+      regC = regs !! (fromIntegral $ inst .&. 0x7)
   
   return (regs, mem)
 --}
