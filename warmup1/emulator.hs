@@ -31,7 +31,7 @@ main = return ()
 opCode :: Instruction -> OptCode
 opCode instruction =  toEnum . fromIntegral $ (instruction .&. (0xE800))
 
-regA, regC :: Int32 -> Int
+regA, regB, regC :: Int32 -> Int
 regA = reg 0xE0
 regB = reg 0x1B
 regC = reg 0x07
