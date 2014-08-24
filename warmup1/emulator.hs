@@ -42,7 +42,7 @@ reg mask = fromIntegral . (.&. mask)
 multiplication :: Instruction -> State MachineState MachineState
 multiplication inst = do
   (regs, mem) <- get
-  let answer = (regs ! regB inst) * (regs ! regA inst) :: Int
+  let answer = (regs ! regB inst) * (regs ! regA inst)
       idxA = regA inst
   return (regs // [(idxA, answer)], mem)
     
