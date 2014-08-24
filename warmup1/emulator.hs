@@ -21,7 +21,7 @@ data OptCode = Conditional_Move |
                                                                               
 type Memory = Array Int32 (Array Int32 Int32)
 type Register = Int32
-type Registers = [Int32]
+type Registers = Array Int Int32
 type MachineState = (Registers, Memory)
 
 main :: IO ()
@@ -34,9 +34,12 @@ opCode instruction =  toEnum . fromIntegral $ (instruction .&. (0x0007))
 condMove :: Int32 -> State MachineState MachineState
 condMove inst = do
   (regs, mem) <- get
-  let regA = regs !! (fromIntegral $ inst .&. 0xE0)
-      regB = regs !! (fromIntegral $ inst .&. 0x1B)
-      regC = regs !! (fromIntegral $ inst .&. 0x7)
-  
+  let idxA = fromIntegral $ inst .&. 0xE0
+      idxB = fromIntegral $ inst .&. 0x1B
+      regC = regs ! (fromIntegral $ inst .&. 0x07)
+  if regC /= 0
+    then let regA = regs !! idxA
+             regB = regs !! idxB
+    else
   return (regs, mem)
 --}
