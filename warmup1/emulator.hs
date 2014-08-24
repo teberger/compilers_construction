@@ -39,7 +39,7 @@ arrayUpdate inst = do
       val = regs ! regC inst
   mem // [(arrId, updatedArray (mem ! arrId) offset val)]
   return (regs, mem)
-  where updatedArray a offset val = a // [(offset, val)]
+    where updatedArray a offset val = a // [(offset, val)]
 
 
 regC :: Int32 -> Int
