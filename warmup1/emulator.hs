@@ -39,6 +39,12 @@ regC = reg 0x07
 reg :: Int32 -> Int32 -> Int
 reg mask = fromIntegral . (.&. mask)
 
+allocation :: Instruction -> State MachineState MachineState
+allocation = undefined
+
+deallocation :: Instruction -> State MachineState MachineState
+deallocation = undefined
+
 nand :: Instruction -> State MachineState MachineState
 nand inst = do
   (regs, mem) <- get
