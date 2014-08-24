@@ -35,6 +35,7 @@ arrayUpdate :: Instruction -> State MachineState MachineState
 arrayUpdate inst = do
   (regs, mem) <- get
   let arrId = regs ! regA inst
+      offset = regs ! regB inst
   return (regs, mem)
 
 
