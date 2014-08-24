@@ -31,6 +31,21 @@ main = return ()
 opCode :: Instruction -> OptCode
 opCode instruction =  toEnum . fromIntegral $ (instruction .&. (0x0007))
 
+arrayUpdate :: Instruction -> State MachineState MachineState
+arrayUpdate = do
+  (regs, mem) <- get
+  let arrId = regs ! (fromIntegral $ inst
+  return (regs, mem)
+
+
+regA, regB, regC :: Int32 -> Int
+regA = reg 0xE0
+regB = reg 0x1B
+regC = reg 0x07
+  
+reg :: Int -> Int32 -> Int
+reg mask = fromIntegral . (.&. mask)
+
 arrayIndex :: Instruction -> State MachineState MachineState
 arrayIndex inst = do
   (regs, mem) <- get
