@@ -2,7 +2,7 @@ import Data.Bits
 import Data.Int
 import Data.Array
 
-type Register = Int32
+
 
 data OptCode = Conditional_Move |
                Array_Index |
@@ -20,6 +20,7 @@ data OptCode = Conditional_Move |
                Load_Immediate deriving (Enum, Eq, Show)
                                                                               
 type Memory = Array Int32 (Array Int32 Int32)
+type Register = Int32
 type Registers = [Int32]
 type MachineState = (Register, Memory)
 
