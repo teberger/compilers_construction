@@ -40,6 +40,6 @@ condMove inst = do
   if regC /= 0
     then let regA = regs !! idxA
              regB = regs !! idxB
-    else
+    else ()
   return (regs, mem)
 --}
