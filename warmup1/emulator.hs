@@ -43,7 +43,7 @@ multiplication :: Instruction -> State MachineState MachineState
 multiplication inst = do
   (regs, mem) <- get
   let answer = (regs ! regB inst) * (regs ! regA inst) :: Int32
-      idxA = regA inst :: Int32
+      idxA = regA inst :: Int
   return (regs // [(idxA, answer)], mem)
     
 
