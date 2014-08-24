@@ -31,6 +31,14 @@ main = return ()
 opCode :: Instruction -> OptCode
 opCode instruction =  toEnum . fromIntegral $ (instruction .&. (0xE800))
 
+regA :: regC :: Int32 -> Int
+regA = reg 0xE0
+regB = reg 0x1B
+regC = reg 0x07
+  
+reg :: Int32 -> Int32 -> Int
+reg mask = fromIntegral . (.&. mask)
+
 arrayUpdate :: Instruction -> State MachineState MachineState
 arrayUpdate inst = do
   (regs, mem) <- get
@@ -39,14 +47,6 @@ arrayUpdate inst = do
       val = regs ! regC inst
       newMem = mem // [(arrId, (mem ! arrId) // [(offset, val)])]
   return (regs, mem)
-
-regC :: Int32 -> Int
-regA = reg 0xE0
-regB = reg 0x1B
-regC = reg 0x07
-  
-reg :: Int32 -> Int32 -> Int
-reg mask = fromIntegral . (.&. mask)
 
 arrayIndex :: Instruction -> State MachineState MachineState
 arrayIndex inst = do
