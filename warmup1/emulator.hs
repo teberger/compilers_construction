@@ -29,7 +29,7 @@ main :: IO ()
 main = return ()
 
 opCode :: Instruction -> OptCode
-opCode instruction =  toEnum . fromIntegral $ (instruction .&. (0x0007))
+opCode instruction =  toEnum . fromIntegral $ (instruction .&. (0xE800))
 
 arrayUpdate :: Instruction -> State MachineState MachineState
 arrayUpdate inst = do
