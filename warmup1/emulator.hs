@@ -19,7 +19,7 @@ data OptCode = Conditional_Move |
                Load |
                Load_Immediate deriving (Enum, Eq, Show)
                                                                               
-stype Memory = Array Int32 (Array Int32 Int32)
+type Memory = Array Int32 (Array Int32 Int32)
 type Register = Int32
 type Registers = [Int32]
 type MachineState = (Register, Memory)
