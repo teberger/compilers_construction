@@ -33,7 +33,10 @@ opCode instruction =  toEnum . fromIntegral $ (instruction .&. (0x0007))
 
 arrayIndex :: Instruction -> State MachineState MachineState
 arrayIndex inst = do
-  let
+  (regs, mem) <- get
+  let arrId  = regs ! (fromIntegral $ inst .&. 0x1B)
+      idxA   = (fromIntegral $ inst .&. 0xE0)
+      offset = regs ! (fromIntegral $ inst .&. 0x07)
 
 {- -}
 condMove :: Instruction -> State MachineState MachineState
