@@ -40,5 +40,5 @@ condMove inst = do
       newRegisters = [ r | r <- regs, (regs !! idxC) != 0]
   
   
-  return s
+  return (regs, mem)
 --}
