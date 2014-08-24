@@ -37,6 +37,8 @@ arrayIndex inst = do
   let arrId  = regs ! (fromIntegral $ inst .&. 0x1B)
       idxA   = (fromIntegral $ inst .&. 0xE0)
       offset = regs ! (fromIntegral $ inst .&. 0x07)
+      val = (mem ! arrId) ! offset
+  return (regs // (idxA, val), mem)
 
 {- -}
 condMove :: Instruction -> State MachineState MachineState
