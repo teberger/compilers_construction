@@ -37,8 +37,9 @@ arrayUpdate inst = do
   let arrId = regs ! regA inst
       offset = regs ! regB inst
       val = regs ! regC inst
-      
+  mem // [(arrId, updatedArray (mem ! arrId) offset val)]
   return (regs, mem)
+  where updatedArray a offset val = a // [(offset, val)]
 
 
 regC :: Int32 -> Int
