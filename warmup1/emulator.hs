@@ -30,5 +30,5 @@ main = return ()
 opCode :: Int32 -> OptCode
 opCode instruction =  toEnum . fromIntegral $ (a .&. (0x0007))
 
-condMove :: StateT
-condMove = 
+--condMove :: StateT
+--condMove = 
