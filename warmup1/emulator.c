@@ -35,7 +35,7 @@ static uint32_t ** memory;
 static uint32_t * registers;
 
 int main() {
-  printf("%u", instruction);
+  conditional_move();
 }
 
 void conditional_move() {
