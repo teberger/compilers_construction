@@ -42,7 +42,7 @@ static uint32_t * registers;
 void conditional_move();
 
 int main() {
-  instruction = 0b00000000000000000000000111110101;
+  instruction = (struct) 0b00000000000000000000000111110101;
   conditional_move();
 }
 
