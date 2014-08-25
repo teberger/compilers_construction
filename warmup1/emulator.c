@@ -40,10 +40,11 @@ static uint32_t ** memory;
 static uint32_t * registers;
 
 void conditional_move();
+void set_instruction();
 
 int main() {
-  int i = 0b00000000000000000000000111110101;
-  
+  uint32_t i = 0b00000000000000000000000111110101;
+  set_instruction(i);
   conditional_move();
 }
 
