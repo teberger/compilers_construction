@@ -30,7 +30,7 @@ enum OP_CODE
 
 int main() {
 
-  instruction.opcode = (enum OP_CODE) (LOAD_IM);
+  instruction.opcode = LOAD_IM;
 
   printf("%u", instruction);
 
