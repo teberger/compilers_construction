@@ -47,8 +47,8 @@ loadImmediate :: Instruction -> State MachineState MachineState
 loadImmediate inst = do
   (regs, mem) <- get
   let val = regs ! reg 0x0FFF
-      reg = regs ! reg 0x7000
-  return (regs // [(reg, val)], mem)
+      register = regs ! reg 0x7000
+  return (regs // [(register, val)], mem)
 
 allocation :: Instruction -> State MachineState MachineState
 allocation = undefined
