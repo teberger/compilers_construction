@@ -34,6 +34,8 @@ enum OP_CODE
 static uint32_t ** memory;
 static uint32_t * registers;
 
+void conditional_move();
+
 int main() {
   conditional_move();
 }
