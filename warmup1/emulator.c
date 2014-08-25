@@ -6,7 +6,7 @@
 #define REG_A instruction.regA
 #define REG_B (instruction.regB >> 3)
 #define REG_C (instruction.regC >> 3)
-#define OP_CODE (instruction.opcode >> 28)
+#define OPCODE (instruction.opcode >> 28)
 
 
 struct
@@ -18,7 +18,7 @@ struct
   unsigned int opcode : 4;
 } instruction;
 
-enum OP_CODE
+enum OpCode
 {
   CMOV = 0,
   A_IDX,
