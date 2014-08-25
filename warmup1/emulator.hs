@@ -40,8 +40,15 @@ reg :: Int32 -> Int32 -> Int
 reg mask = fromIntegral . (.&. mask)
 
 output = undefined
-
 input = undefined
+loadProgram = undefined
+
+loadImmediate :: Instruction -> State MachineState MachineState
+loadImmediate inst = do
+  (regs, mem) <- get
+  let val = regs ! reg 0x0FFF
+      reg = regs ! reg 0x7000
+  return
 
 allocation :: Instruction -> State MachineState MachineState
 allocation = undefined
