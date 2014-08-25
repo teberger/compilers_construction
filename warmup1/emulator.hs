@@ -50,7 +50,6 @@ loadImmediate inst = do
       register = reg 0x7000 inst
   return (regs // [(register, val)], mem)
 
-
 allocation :: Instruction -> State MachineState MachineState
 allocation = undefined
 
