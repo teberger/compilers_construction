@@ -42,9 +42,10 @@ static uint32_t * registers;
 void conditional_move();
 
 int main() {
+  instruction = 0b00000000000000000000000111110101;
   conditional_move();
 }
 
 void conditional_move() {
-  printf("Moving from register %u to %u if %u is 0", REG_A, REG_B, REG_C, OPCODE);
+  printf("Moving from register %u to %u if %u is 0", REG_A, REG_B, REG_C);
 }
