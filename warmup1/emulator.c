@@ -38,3 +38,6 @@ int main() {
   printf("%u", instruction);
 }
 
+void conditional_move() {
+  printf("Moving from register %u to %u if %u is 0", instruction.regA, instruction.regB, instruction.regC) 
+}
