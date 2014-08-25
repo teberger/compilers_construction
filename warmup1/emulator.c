@@ -28,5 +28,6 @@ enum OP_CODE
 };
 
 int main() {
-
+  Instruction i;
+  printf("%d", sizeof(i));
 }
