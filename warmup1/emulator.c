@@ -11,7 +11,20 @@ struct
 
 enum OP_CODE
 {
-
+  CMOV = 0,
+  A_IDX,
+  A_UPD,
+  ADD,
+  MUL,
+  DIV,
+  NAND,
+  HALT,
+  ALLOC,
+  DALLAC,
+  OUTPUT,
+  INPUT,
+  LOAD,
+  LOAD_IM
 };
 
 int main() {
