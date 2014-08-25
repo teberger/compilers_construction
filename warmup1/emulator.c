@@ -18,7 +18,7 @@ struct
   unsigned int opcode : 4;
 } instruction;
 
-enum OpCode
+enum OpCodeEnum
 {
   CMOV = 0,
   A_IDX,
