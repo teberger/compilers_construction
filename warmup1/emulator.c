@@ -49,10 +49,10 @@ int main() {
 }
 
 void set_instruction(uint32_t i) {
-  instruction.regA = (i & 0b00000000000000000000000000000111);
-  instruction.regB = (i & 0b00000000000000000000000000111000) >> 3;
-  instruction.regC = (i & 0b00000000000000000000000111000000) >> 6;
-  instruction.value = (i & 0b00001111111111111111111000000000) >> 9;
+  instruction.regA = (i & 0x00000007);
+  instruction.regB = (i & 0x00000038) >> 3;
+  instruction.regC = (i & 0x0000 01B0) >> 6;
+  instruction.value = (i & 0x0FFFFE00) >> 9;
   instruction.opcode = (i & 0xF0000000);
 }
 
