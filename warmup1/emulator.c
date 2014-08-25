@@ -43,7 +43,7 @@ void conditional_move();
 void set_instruction();
 
 int main() {
-  uint32_t i = 0b00000000000000000000000111110101;
+  uint32_t i = 0b10000000000000000000000111110101;
   set_instruction(i);
   conditional_move();
 }
@@ -57,5 +57,5 @@ void set_instruction(uint32_t i) {
 }
 
 void conditional_move() {
-  printf("Moving from register %u to %u if %u is 0", instruction.regA, instruction.regB, instruction.regC);
+  printf("Moving from register %u to %u if %u is 0. Op code is: %u", instruction.regA, instruction.regB, instruction.regC, instruction.opcode);
 }
