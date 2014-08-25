@@ -39,6 +39,10 @@ regC = reg 0x07
 reg :: Int32 -> Int32 -> Int
 reg mask = fromIntegral . (.&. mask)
 
+output = undefined
+
+input = undefined
+
 allocation :: Instruction -> State MachineState MachineState
 allocation = undefined
 
