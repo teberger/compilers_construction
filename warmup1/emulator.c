@@ -57,5 +57,5 @@ void set_instruction(uint32_t i) {
 }
 
 void conditional_move() {
-  printf("Moving from register %u to %u if %u is 0", REG_A, REG_B, REG_C);
+  printf("Moving from register %u to %u if %u is 0", instruction.regA, instruction.regB, instruction.regC);
 }
