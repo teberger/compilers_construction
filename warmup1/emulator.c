@@ -7,7 +7,7 @@ struct
   unsigned int regC   : 3;
   unsigned int value  : 19;
   unsigned int opcode : 4;
-} Instruction;
+} instruction;
 
 enum OP_CODE
 {
@@ -28,6 +28,5 @@ enum OP_CODE
 };
 
 int main() {
-  struct Instruction i;
-  printf("%d", sizeof(i));
+  printf("%d", sizeof(instruction));
 }
