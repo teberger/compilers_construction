@@ -32,5 +32,6 @@ int main() {
 
   instruction.opcode = (enum OP_CODE) (LOAD_IM);
 
-  printf("%d", instruction);
+  printf("%u", instruction);
+
 }
