@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define MAX_REGISTERS 8
+
 struct
 {
   unsigned int regA   : 3;
@@ -28,10 +30,10 @@ enum OP_CODE
   LOAD_IM
 };
 
+static uint32** memory;
+static uint32* registers;
+
 int main() {
-
-  instruction.opcode = LOAD_IM;
-
   printf("%u", instruction);
-
 }
+
