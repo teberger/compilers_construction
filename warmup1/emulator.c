@@ -9,7 +9,7 @@ struct
   unsigned int opcode : 4;
 } Instruction;
 
-enum 
+enum OP_CODE
 {
 
 };
