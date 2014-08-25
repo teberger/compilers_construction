@@ -5,7 +5,7 @@
 #define MAX_REGISTERS 8
 #define REG_A instruction.regA
 #define REG_B (instruction.regB >> 3)
-#define REB_C (instruction.regC >> 3)
+#define REG_C (instruction.regC >> 3)
 #define OP_CODE (instruction.opcode >> 28)
 
 
