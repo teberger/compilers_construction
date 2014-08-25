@@ -28,6 +28,6 @@ enum OP_CODE
 };
 
 int main() {
-  struct Instruction i;
+  struct i Instruction;
   printf("%d", sizeof(i));
 }
