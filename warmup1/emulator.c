@@ -43,7 +43,16 @@ void conditional_move();
 
 int main() {
   int i = 0b00000000000000000000000111110101;
+  
   conditional_move();
+}
+
+void set_instruction(uint32_t i) {
+  instruction.regA = (i & 0b00000000000000000000000111000000) >> 6;
+  instruction.regB = (i & 0b00000000000000000000000000111000) >> 3;
+  instruction.regB = (i & 0b00000000000000000000000000000111);
+  instruction.value = (i & 0b00001111111111111111111000000000) >> 9;
+  instruction.opcode = (i & 0b11110000000000000000000000000000) >> 23;
 }
 
 void conditional_move() {
