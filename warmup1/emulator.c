@@ -46,5 +46,5 @@ int main() {
 }
 
 void conditional_move() {
-  printf("Moving from register %u to %u if %u is 0", instruction.regA, instruction.regB, instruction.regC);
+  printf("Moving from register %u to %u if %u is 0", REG_A, REG_B, REG_C, OPCODE);
 }
