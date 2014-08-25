@@ -30,8 +30,8 @@ enum OP_CODE
   LOAD_IM
 };
 
-static uint32** memory;
-static uint32* registers;
+uint32** memory;
+uint32* registers;
 
 int main() {
   printf("%u", instruction);
