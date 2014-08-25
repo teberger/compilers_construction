@@ -43,7 +43,7 @@ void conditional_move();
 void set_instruction();
 
 int main() {
-  uint32_t i = 0b10000000000000000000000111110101;
+  uint32_t i = 0x800001F5;
   set_instruction(i);
   conditional_move();
 }
