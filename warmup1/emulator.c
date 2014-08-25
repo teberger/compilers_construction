@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 struct
 {
@@ -28,5 +29,7 @@ enum OP_CODE
 };
 
 int main() {
+
+  instruction.opcode = (enum OP_CODE) (LOAD_IM)
   printf("%d", sizeof(instruction));
 }
