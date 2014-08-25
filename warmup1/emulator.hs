@@ -46,7 +46,7 @@ loadProgram = undefined
 loadImmediate :: Instruction -> State MachineState MachineState
 loadImmediate inst = do
   (regs, mem) <- get
-  let val = regs ! (reg 0x0FFF)
+--  let val = regs ! (reg 0x0FFF)
 --      register = regs ! (reg 0x7000)
 --  return (regs // [(register, val)], mem)
   return (regs, mem)
