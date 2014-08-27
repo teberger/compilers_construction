@@ -52,7 +52,7 @@ void set_instruction(uint32_t i) {
   instruction.regB = (i & 0x00000038) >> 3;
   instruction.regC = (i & 0x000001B0) >> 6;
   instruction.value = (i & 0x0FFFFE00) >> 9;
-  instruction.opcode = (i & 0xF0000000);
+  instruction.opcode = (i & 0xF0000000) >> 23;
 }
 
 void conditional_move() {
