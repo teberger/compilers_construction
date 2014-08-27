@@ -8,7 +8,6 @@
 #define REG_C (instruction.regC >> 3)
 #define OPCODE (instruction.opcode >> 28)
 
-
 struct
 {
   unsigned int regA   : 3;
@@ -43,7 +42,7 @@ void conditional_move();
 void set_instruction();
 
 int main() {
-  uint32_t i = 0x800001F5;
+  uint32_t i = 0xF00001F5;
   set_instruction(i);
   conditional_move();
 }
